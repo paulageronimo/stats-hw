@@ -32,10 +32,10 @@ def inR(r):
   return f"There is a {relationship} {directionality} relationship between X and Y"
 
 def inR2(r):
-  return f"{round(r**2,2)*100}% of Y can be explained by x"
+  return f"{round(r**2,2)*100}% of the variability in Y can be explained by x"
 
 def in1_R2(r):
-  return f"{(1-round(r**2,2))*100}% of Y cannot be explained by x"
+  return f"{(1-round(r**2,2))*100}% of the variability in Y cannot be explained by x"
 
 def calcR(sXY, sX, sY, sX2, sY2, n):
   r_top = sXY - (sX * sY)/n
@@ -92,8 +92,8 @@ def hw(x, y):
   # plt.show()
   
 
-x1 = [8,8,5,9,8,2]
-y1 = [13,10,9,13,15,9]
+x1 = [8, 2, 5, 3, 4]
+y1 = [9, 5, 8, 5, 6]
 
 x2 = [7, 8, 5, 9, 8, 6, 5]
 y2 = [14,12,10,18,17,14,11]
@@ -102,5 +102,25 @@ x3 = [5,2,6,9,8,9,8,9]
 y3 = [9,6,2,2,8,7,2,1]
 
 # hw(x1, y1)
-hw(x3, y3)
+# hw(x3, y3)
 # calcR(13937, 202, 409, 7280, 28365, 6)
+calcR(1467,32,401,152,21021,8)
+# def calcVar(x, xbar, n, x2):
+#   var = (x2-(x**2)/n)/(n-1)
+#   print(f"\t{x2}-{(x**2)/n}")
+#   print("----------------------")
+#   print(f"{n-1}")
+#   print(" * "*10)
+#   print(var)
+  
+# calcVar(686, 34.3, 20, 25128)
+
+# x = [18,19,16.5,17,18]
+# y = [2,5,6,1,4]
+# sXY = dot(array(x), array(y))
+# xbar = 17.7
+# ybar = 3.6
+# for i in range(5):
+#   print(round(x[i] - xbar,2), ' ', round(y[i]-ybar,2), ' = ', round(round(y[i]-ybar,2)*round(x[i] - xbar,2),2))
+# print(sXY)
+

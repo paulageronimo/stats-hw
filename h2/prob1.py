@@ -1,6 +1,8 @@
 
 from math import sqrt
 from statistics import mean
+
+from numpy import sort
 # Calculating SD and stuff
 
 def square(list):
@@ -12,11 +14,12 @@ def listOfZs(t, M, s):
 def listOfTs(zs):
   return [round(z*10+50, 2) for z in zs]
 
-t1 = [9,7,6,5,5,6,2]
-sqt1 = [9**2,7**2,6**2,5**2,5**2,6**2,2**2]
+t1 = [13,16,18,19,20,20,21,28,32,34,36,43,46,46,48,48,72,91]
+print(sort(t1))
+sqt1 = square(t1)
 print(sqt1)
-t2 = [14,24,17,26,34,25,22]
-sqt2 = [14**2,24**2,17**2,26**2,34**2,25**2,22**2]
+t2 = [0]
+sqt2 = []
 print(sqt2)
 # Mean, xbar
 M1, M2 = mean(t1), mean(t2)
@@ -31,9 +34,12 @@ print('ΣX^2: ', sX1sq, sX2sq)
 n1, n2 = len(t1), len(t2)
 print('n: ', n1, n2)
 # SD
-s1, s2 = round(sqrt((sX1sq - (sX1**2 / n1))/(n1-1)), 2), round(sqrt((sX2sq - (sX2**2 / n2))/(n2-1)), 2)
-z1, z2 = listOfZs(t1, M1, s1), listOfZs(t2, M2, s2)
-T1, T2 = listOfTs(z1), listOfTs(z2)
+s1, s2 = round(sqrt((sX1sq - (sX1**2 / n1))/(n1-1)), 2), round(sqrt((sX2sq - (sX2**2 / n1))/(n1-1)), 2)
+# z1, z2 = listOfZs(t1, M1, s1), listOfZs(t2, M2, s2)
+# T1, T2 = listOfTs(z1), listOfTs(z2)
+
+z1= listOfZs(t1, M1, s1)
+T1= listOfTs(z1)
 
 print("\nStandard Deviation")
 print("S=", s1,"S=", s2)
